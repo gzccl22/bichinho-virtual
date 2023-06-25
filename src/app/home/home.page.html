@@ -1,20 +1,74 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar class="container">
+    <ion-title class="titulo">Bichinho Virtual</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  
+  <div id="bear">
+		<div id="bearHead">
+			<div class="earLeft"><div class="earInside"></div></div>
+			<div class="earRight"><div class="earInside"></div></div>
+			<div class="head">
+				<div class="leftEye"><div class="eyeBall"></div></div>
+				<div class="rightEye"><div class="eyeBall"></div></div>
+				<div class="mouthContainer">
+					<div class="nose"></div>
+					<div class="mouth"></div>
+				</div>
+			</div>
+		</div><!--bearHead-->
+		<div id="bearBody">
+			<div class="leftHand">
+				<div class="hand"></div>
+				<div class="claw1"></div>
+				<div class="claw2"></div>
+				<div class="claw3"></div>
+			</div>
+			<div class="rightHand">
+				<!--<div class="hand"></div>-->
+				<div class="claw1"></div>
+				<div class="claw2"></div>
+				<div class="claw3"></div>
+			</div>
+			<div class="belly"></div>
+			<div class="leftFoot">
+				<div class="finger one"></div>
+				<div class="finger two"></div>
+				<div class="finger three"></div>
+				<div class="foot"></div>
+			</div><!--leftFoot-->
+			<div class="rightFoot">
+				<div class="finger one"></div>
+				<div class="finger two"></div>
+				<div class="finger three"></div>
+				<div class="foot"></div>
+			</div><!--rightFoot-->
+		</div><!--bearBody-->
+		<div class="clear-me"></div>
+	</div><!--bear-->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="score-container">
+    <div class="score-label">Fome:</div>
+    <div class="score-value">{{ foodScore }}</div>
   </div>
+
+  <div class="score-container">
+    <div class="score-label">Felicidade:</div>
+    <div class="score-value">{{ happinessScore }}</div>
+    
+  </div>
+  
+  <div class="emotion-buttons">
+    <ion-button expand="full" (click)="feedBichinho()">Alimentar</ion-button>
+    <ion-button expand="full" (click)="petBichinho()">Dar Carinho</ion-button>
+    <ion-button expand="full" (click)="takeBichinhoForAWalk()">Levar para Passear</ion-button>
+    <ion-button expand="full" (click)="changeBichinhoClothes()">Trocar de Roupa</ion-button>
+  </div>
+  
+
+  
+
+
 </ion-content>

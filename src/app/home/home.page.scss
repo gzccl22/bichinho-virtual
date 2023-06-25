@@ -1,27 +1,437 @@
-#container {
+
+.titulo{
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+
+.emotion-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
-#container p {
+.emotion-buttons ion-button {
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.score-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.score-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.score-value {
+  font-weight: bold;
+}
+
+.happy {
+  filter: none;
+}
+
+.sad {
+  filter: grayscale(100%);
+}
+
+.urso-ascii {
+  font-family: monospace;
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  white-space: pre;
 }
 
-#container a {
-  text-decoration: none;
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
+
+.score-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.score-value {
+  font-weight: bold;
+}
+
+.head,
+.earLeft,
+.earRight,
+#bearBody,
+.leftHand,
+.rightHand,
+.leftFoot,
+.rightFoot {
+	background: brown; /*	bear color	*/
+}
+.earInside,
+.mouthContainer,
+.hand,
+.belly,
+.finger,
+.foot {
+	background: #FFCC99; /*	"skin" */
+}
+.head,
+.earLeft,
+.earRight,
+#bearBody,
+.leftFoot,
+.rightFoot {
+	box-shadow: 2px -2px 18px 6px #780000 inset; /*	shadow	*/
+}
+
+#bear {
+	height: 0;
+	width: 33%;
+	margin: 9% auto 0;
+	padding-bottom: 27%;
+	position: relative;
+}
+
+#bearHead {
+	width: 35%;
+	height: 41%;
+	display: block;
+	top: -30%;
+	left: 32%;
+	position: absolute;
+	z-index: 50;
+	}	
+	.head {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: relative;
+		border-radius: 50%;
+	}
+	.earLeft,
+	.earRight {
+		width: 30%;
+		height: 30%;
+		border-radius: 50%;
+	}
+	.earLeft {
+		position: absolute;
+		-webkit-transform-origin: 100% 100%;
+		-moz-transform-origin: 100% 100%;
+		-o-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		
+		-webkit-animation: 6s linear normal none infinite ear;
+		-moz-animation: 6s linear normal none infinite ear;
+		-o-animation: 6s linear normal none infinite ear;
+		animation: 6s linear normal none infinite ear;
+	}
+	.earRight {
+		float: right;
+		-webkit-transform-origin: 0% 100%;
+		-moz-transform-origin: 0% 100%;
+		-o-transform-origin: 0% 100%;
+		transform-origin: 0% 100%;
+		
+		-webkit-animation: 8s linear 2s normal none infinite ear;
+		-moz-animation: 8s linear 2s normal none infinite ear;
+		-o-animation: 8s linear 2s normal none infinite ear;
+		animation: 8s linear 2s normal none infinite ear;
+	}
+	@keyframes ear {
+		0% {	transform: rotate(0deg);	}
+		2% {	transform: rotate(5deg);	}
+		4% {	transform: rotate(0deg);	}
+		6% {	transform: rotate(-5deg);	}
+		8% {	transform: rotate(0deg);	}
+	}	
+	@-webkit-keyframes ear {
+		0% {	-webkit-transform: rotate(0deg);	}
+		2% {	-webkit-transform: rotate(5deg);	}
+		4% {	-webkit-transform: rotate(0deg);	}
+		6% {	-webkit-transform: rotate(-5deg);	}
+		8% {	-webkit-transform: rotate(0deg);	}
+	}	
+		.earInside {
+			width: 60%;
+			height: 60%;
+			margin: 22% auto 0;
+			border-radius: 50%;
+			box-shadow: 1px 1px 3px #c16868 inset;
+		}
+	.leftEye,
+	.rightEye {
+		width: 23%;
+		height: 28%;
+		bottom: 42%;
+		position: absolute;
+		background: #ffffff;
+		border-radius: 74%;
+		box-shadow: 0px 0px 3px #999 inset;
+		
+		-webkit-animation: 6s linear 1s normal none infinite eyeclip;
+		-moz-animation: 6s linear 1s normal none infinite eyeclip;
+		-o-animation: 6s linear 1s normal none infinite eyeclip;
+		animation: 6s linear 1s normal none infinite eyeclip;
+	}
+		@keyframes eyeclip {
+			0% {	height: 28%;	}
+			1% {	height: 0%;		}
+			2% {	height: 28%;	}
+		}	
+		@-webkit-keyframes eyeclip {
+			0% {	height: 28%;	}
+			1% {	height: 0%;		}
+			2% {	height: 28%;	}
+		}	
+	.leftEye {
+		left: 27%;
+		-webkit-transform: rotate(-4deg);
+		-moz-transform: rotate(-4deg);
+		-o-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	.rightEye {
+		right: 27%;
+		-webkit-transform: rotate(4deg);
+		-moz-transform: rotate(4deg);
+		-o-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+		.eyeBall {
+			width: 37%;
+			height: 40%;
+			background: #000;
+			border-radius: 50%;
+			margin: 49% auto 0;
+		}
+	.mouthContainer {
+		width: 47%;
+		height: 30%;
+		top: 57%;
+		left: 27%;
+		position: absolute;
+		border-radius: 50%;
+	}
+		.nose {
+			width: 40%;
+			height: 37%;
+			background: pink;
+			top: -12%;
+			left: 29%;
+			position: absolute;
+			border-radius: 80%;
+			box-shadow: 0px -1px 5px 1px #333 inset;
+		}
+		.mouth {
+			width: 52%;
+			height: 43%;
+			border-width: 0 0 5px 0;
+			border-color: #000;
+			border-radius: 0 0 92% 92%;
+			border-style: solid;
+			top: 4%;
+			left: 23%;
+			position: absolute;
+		}
+	#bearBody {
+		width: 60%;
+		height: 72%;
+		padding-top: 60%;
+		position: relative;
+		margin: 0 auto 0;
+		border-radius: 50% / 55% 55% 45% 45%;
+	}
+		.leftHand,
+		.rightHand {
+			width: 46%;
+			height: 33%;
+			border-radius: 54%;
+			top: 9%;
+			position: absolute;
+			-webkit-transform-origin: 92% 50%;
+			-moz-transform-origin: 92% 50%;
+			-o-transform-origin: 92% 50%;
+			transform-origin: 92% 50%;
+		}
+		.leftHand {
+			left: -23%;
+			-webkit-transform: rotate(35deg);
+			-moz-transform: rotate(35deg);
+			-o-transform: rotate(35deg);
+			transform: rotate(35deg);
+			box-shadow: 4px -2px 12px 6px #780000 inset;
+			-webkit-animation: 2s linear 1s normal none infinite waveHL;
+			-moz-animation: 2s linear 1s normal none infinite waveHL;
+			-o-animation: 2s linear 1s normal none infinite waveHL;
+			animation: 2s linear 1s normal none infinite waveHL;
+		}
+			@keyframes waveHL {
+				0% {	transform: rotate(35deg);	}
+				50% {	transform: rotate(60deg);	}
+			}
+			@-webkit-keyframes waveHL {
+				0% {	-webkit-transform: rotate(35deg);	}
+				50% {	-webkit-transform: rotate(60deg);	}
+			}
+		.rightHand {
+			right: 16%;
+			-webkit-transform: rotate(274deg);
+			-moz-transform: rotate(274deg);
+			-o-transform: rotate(274deg);
+			transform: rotate(274deg);
+			box-shadow: 4px 2px 17px 6px #780000 inset;
+			z-index: 2;
+			-webkit-animation: 6s linear 1s normal none infinite waveHR;
+			-moz-animation: 6s linear 1s normal none infinite waveHR;
+			-o-animation: 6s linear 1s normal none infinite waveHR;
+			animation: 6s linear 1s normal none infinite waveHR;
+		}
+			@keyframes waveHR {
+				0% {	transform: rotate(274deg);	}
+				50% {	transform: rotate(265deg);	}
+			}
+			@-webkit-keyframes waveHR {
+				0% {	-webkit-transform: rotate(274deg);	}
+				50% {	-webkit-transform: rotate(265deg);	}
+			}
+			.hand {
+				width: 37%;
+				height: 47%;
+				margin: 18% 0 0 9%;
+				border-radius: 50%;
+			}				
+			.claw1,
+			.claw2,
+			.claw3 {
+				width: 12%;
+				height: 6%;
+				position: absolute;
+				background: #000;
+			}
+			.claw1 {
+				top: 30%;
+				left: -6%;
+				-webkit-transform: rotate(10deg);
+				-moz-transform: rotate(10deg);
+				-o-transform: rotate(10deg);
+				transform: rotate(10deg);
+			}
+			.claw2 {
+				top: 46%;
+				left: -9%;
+			}
+			.claw3 {
+				left: -6%;
+				bottom: 30%;
+				-webkit-transform: rotate(-10deg);
+				-moz-transform: rotate(-10deg);
+				-o-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+		.belly {
+			width: 66%;
+			height: 66%;
+			margin: 0 0 0 -33%;
+			left: 50%;
+			bottom: 12%;
+			position: absolute;
+			border-radius: 50% / 55% 55% 45% 45%;
+		}
+		.leftFoot,
+		.rightFoot {
+			width: 40%;
+			height: 43%;
+			bottom: 0;
+			position: absolute;
+			border-radius: 50%;
+			-webkit-transform-origin: 50% 92%;
+			-moz-transform-origin: 50% 92%;
+			-o-transform-origin: 50% 92%;
+			transform-origin: 50% 92%;
+		}
+		.leftFoot {
+			left: 2%;
+			-webkit-animation: 8s linear 2s normal none infinite waveFoot;
+			-moz-animation: 8s linear 2s normal none infinite waveFoot;
+			-o-animation: 8s linear 2s normal none infinite waveFoot;
+			animation: 8s linear 2s normal none infinite waveFoot;
+		}
+		.rightFoot {
+			right: 2%;
+			-webkit-animation: 6s linear normal none infinite waveFoot;
+			-moz-animation: 6s linear normal none infinite waveFoot;
+			-o-animation: 6s linear normal none infinite waveFoot;
+			animation: 6s linear normal none infinite waveFoot;
+		}
+			@keyframes waveFoot {
+				0% {	transform: rotate(0deg);	}
+				25% {	transform: rotate(5deg);	}
+				50% {	transform: rotate(0deg);	}
+				75% {	transform: rotate(-5deg);	}
+				100% {	transform: rotate(0deg);	}
+			}
+			@-webkit-keyframes waveFoot {
+				0% {	-webkit-transform: rotate(0deg);	}
+				25% {	-webkit-transform: rotate(5deg);	}
+				50% {	-webkit-transform: rotate(0deg);	}
+				75% {	-webkit-transform: rotate(-5deg);	}
+				100% {	-webkit-transform: rotate(0deg);	}
+			}
+			.finger {
+				width: 22%;
+				height: 20%;
+				position: absolute;
+				border-radius: 50%;
+			}
+			.one {
+				top: 21%;
+				left: 23%;
+				margin: 0 0 0 -10%;
+			}
+			.two {
+				top: 11%;
+				left: 50%;
+				margin: 0 0 0 -10%;
+			}
+			.three {
+				top: 21%;
+				right: 23%;
+				margin: 0 -10% 0 0;
+			}
+			.hand,
+			.finger,
+			.foot{
+				box-shadow: 2px -2px 8px 3px #fb9937 inset;
+			}
+			.foot {
+				width: 54%;
+				height: 51%;
+				left: 22%;
+				bottom: 10%;
+				position: absolute;
+				border-radius: 50%;
+			}
+	.clear-me {
+		height: 0;
+		clear: both;
+		display: block;
+	}
+	
+	
+	
+	.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
